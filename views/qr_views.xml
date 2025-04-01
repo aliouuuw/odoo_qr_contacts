@@ -1,0 +1,45 @@
+<odoo>
+    
+    <record id="list_contact_qrcode" model="ir.ui.view">
+        <field name="name">contact.qrcode.list</field>
+        <field name="model">contact.qrcode</field>
+        <field name="arch" type="xml">
+            <list string="Carte de visite">
+                <field name="name"/>
+                <field name="prenom"/>
+                <field name="entreprise"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Vue Formulaire Contact QRCode -->
+    <record id="view_contact_qrcode_form" model="ir.ui.view">
+        <field name="name">contact.qrcode.form</field>
+        <field name="model">contact.qrcode</field>
+        <field name="arch" type="xml">
+            <form string="Contact QR Code">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="prenom"/>
+                        <field name="telephone"/>
+                        <field name="email"/>
+                        <field name="entreprise"/>
+                        <field name="poste"/>
+                        <field name="adresse"/>
+                    </group>
+                    <group>
+                        <field name="qr_code" widget="image" class="oe_inline"/>  <!-- Ajout de oe_inline pour rendre l'image responsive -->
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action pour ouvrir la vue -->
+    <record id="qr_code_action" model="ir.actions.act_window">
+        <field name="name">Carte de visite QR Code</field>
+        <field name="res_model">contact.qrcode</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

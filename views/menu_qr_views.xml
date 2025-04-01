@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>  
+    <menuitem id="gestion_menu_root" name="carte de visite">
+
+        <menuitem id="qr_menu_action" name="Qr" action="qr_code_action"/> 
+
+    </menuitem> 
+</odoo>

@@ -22,6 +22,7 @@ class ContactQRCode(models.Model):
         for record in self:
             vcard = f"""BEGIN:VCARD
 VERSION:3.0
+N:{record.name};{record.prenom};;;
 FN:{record.prenom} {record.name}
 TEL:{record.telephone}
 EMAIL:{record.email}
